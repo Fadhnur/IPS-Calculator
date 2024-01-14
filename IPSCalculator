@@ -1,0 +1,96 @@
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int JumMatkul;
+int Sks;
+int Total = 0;
+float Nilai;
+float Jum;
+string Abjad;
+string NamaMatkul;
+
+void Jumlah(float Jum, int JumMatkul){
+    float SKS[JumMatkul];
+    
+    for(int i = 0; i < JumMatkul; i++){
+        SKS[i] = Jum;
+    }
+    
+    cout << fixed << setprecision(2);
+    for(int i = 0; i < JumMatkul; i++){
+        Total += SKS[i];
+    }
+    
+    cout << Total << endl;
+}
+
+void HitungNilai(string Abjad, int Sks, int JumMatkul){
+    JumMatkul = JumMatkul;
+    
+    if(Abjad == "a"|| Abjad == "A") {
+        Nilai = 4;
+    }
+        
+    else if(Abjad == "ab"|| Abjad == "AB") {
+        Nilai = 3.5;
+    }
+        
+    else if(Abjad == "b"|| Abjad == "B") {
+        Nilai = 3;
+    }
+        
+    else if(Abjad == "bc"|| Abjad == "BC"){
+        Nilai = 2.5;
+    }
+            
+    else if(Abjad == "c"|| Abjad == "C"){
+        Nilai = 2;
+    }
+        
+    else if(Abjad == "d"|| Abjad == "D"){
+        Nilai = 1;
+    }
+        
+    else if(Abjad == "e"|| Abjad == "E"){
+        Nilai = 0;
+    }
+        
+    else {
+        cout << "Huruf yang anda masukkan salah" << endl;
+    }
+        
+    Jum = Nilai*Sks;
+    cout << Jum << endl;
+    cout << JumMatkul;
+    Jumlah(Jum, JumMatkul);
+    
+}
+    
+
+void Print(){
+        //cout << "Nama Mata Kuliah = " << NamaMatkul << endl;
+        //cout << "Nilai Mata Kuliah = " << Abjad << endl;
+        
+    }
+    
+void Display(){
+    cout << "===== KALKULATOR IP SEMESTER =====" << endl;
+    cout << "Masukkan banyak mata kuliah = "; 
+    cin >> JumMatkul;
+    
+    while(JumMatkul--){
+        cout << "Nama Mata Kuliah = "; cin >> NamaMatkul;
+        cout << "Nilai Mata Kuliah = "; cin >> Abjad;
+        cout << "Bobot Kredit = "; cin >> Sks;
+        HitungNilai(Abjad,Sks,JumMatkul);
+        
+    } 
+    
+    
+}
+
+int main() {
+    Display();
+    //Print();
+}
