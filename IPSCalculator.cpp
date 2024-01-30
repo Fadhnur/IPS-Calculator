@@ -69,26 +69,59 @@ void Display(){
     int Sks;
     string NamaMatkul;
     string Abjad;
-
-    cout << "===== KALKULATOR IP SEMESTER =====" << endl;
-    cout << endl;
-    cout << "Masukkan banyak mata kuliah = "; 
-    cin >> JumMatkul;
-
+    char choice;
+    char jwb;
     
-    while(JumMatkul--){
-        cin.ignore();
-        cout << "Nama Mata Kuliah = "; getline(cin,NamaMatkul); //Mengambil seluruh kata dalam kalimat
-        cout << "Nilai Mata Kuliah (berupa abjad) = "; cin >> Abjad;
-        cout << "Bobot Kredit = "; cin >> Sks;
+    cout << "\t SELAMAT DATANG DI KALKULATOR IP \t" << endl;
+    cout << "1. Kalkulator IP Semester \n2. Kalkulator IPK" << endl;;
+    cout << "Silahkan memilih kalkulator yang ingin digunakan : "; cin >> choice;
+    
+    if(choice == '1'){
+        system("START");
+        cout << "===== KALKULATOR IP SEMESTER =====" << endl;
         cout << endl;
-        HitungNilaiMatkul(Abjad,Sks);
+        cout << "Masukkan banyak mata kuliah = "; 
+        cin >> JumMatkul;
+    
+        
+        while(JumMatkul--){
+            cin.ignore();
+            cout << "Nama Mata Kuliah = "; getline(cin,NamaMatkul); //Mengambil seluruh kata dalam kalimat
+            cout << "Nilai Mata Kuliah (berupa abjad) = "; cin >> Abjad;
+            cout << "Bobot Kredit = "; cin >> Sks;
+            cout << endl;
+            HitungNilaiMatkul(Abjad,Sks);
+        }
+        Print();
+        
     }
     
+    else if(choice == '2'){
+        system("START");
+        cout << "Maaf fitur ini belum tersedia" << endl;
+        cout << "Apakah anda ingin memasukkan angka kembali? (y/n) : "; cin >> jwb;
+        if(jwb == 'y'){
+            Display();
+        }
+        else{
+            system("PAUSE");
+        }
+    }
+    
+    else {
+        system("START");
+        cout << "Angka yang anda masukkan salah" << endl;
+        cout << "Apakah anda ingin memasukkan angka kembali? (y/n) : "; cin >> jwb;
+        if(jwb == 'y'){
+            Display();
+        }
+        else{
+            system("PAUSE");
+        }
+    }
 }
 
 int main() {
     Display();
-    Print();
 }
     
