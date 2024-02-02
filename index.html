@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IP Kalkulator</title>
+    <link rel="stylesheet" href="custom.css">
+</head>
+<body>
+    <div id="calculator-container">
+        <h1>IP Kalkulator</h1>
+
+        <!-- Tahap 1: Input Banyak Mata Kuliah -->
+        <div id="tahap1">
+            <label for="jumlahMataKuliah">Jumlah Mata Kuliah:</label>
+            <input type="number" id="jumlahMataKuliah" min="1" required>
+            <button onclick="lanjutTahap2()">Submit</button>
+        </div>
+
+        <!-- Tahap 2: Input Nilai Mata Kuliah -->
+        <div id="tahap2" style="display: none;">
+            <table id="inputTable"></table>
+            <button onclick="lanjutTahap3()">Hitung IP</button>
+        </div>
+
+        <!-- Tahap 3: Hasil IP -->
+        <div id="tahap3" style="display: none;">
+            <div id="hasilContainer"></div>
+            <button onclick="selesai()">Selesai</button>
+            <button onclick="kembaliKeMenuUtama()">Kembali ke halaman utama</button>
+        </div>
+    </div>
+
+    <script src="otak.js"></script>
+</body>
+</html>
